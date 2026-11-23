@@ -1,0 +1,54 @@
+# What the agent looks for. Edit this file to change the search; no code changes needed.
+
+feeds:
+  # Company careers pages (my Career-feed repo, built daily by GitHub Actions)
+  - name: careers-pages
+    url: https://raw.githubusercontent.com/georgeakshay/Career-feed/main/career_jobs.json
+    max_age_days: 3        # only jobs first seen in the last N days
+  # LinkedIn + Indeed via the open-source JobSpy library (my job-feed repo)
+  - name: linkedin-indeed
+    url: https://raw.githubusercontent.com/georgeakshay/job-feed/main/jobs.json
+    max_age_days: 2
+
+locations_keep: [uae, united arab emirates, dubai, abu dhabi, sharjah, ajman, al ain, ras al khaimah, fujairah, remote]
+
+title_keywords:   # at least one must appear in the job title
+  - analyst
+  - business intelligence
+  - " bi "
+  - power bi
+  - reporting
+  - mis
+  - data
+  - odoo
+  - erp
+  - crm
+  - business systems
+  - automation
+  - revenue
+  - insights
+  - strategy
+
+title_exclude:    # seniority / role types that are never a fit
+  - director
+  - head of
+  - vice president
+  - " vp"
+  - chief
+  - principal
+  - intern
+  - engineer
+  - developer
+  - scientist
+  - nurse
+  - teacher
+  - trainee
+  - clerk
+  - emiratization
+  - emiratisation
+  - uaen 
+  - nationals only
+
+max_years_experience: 4      # skip jobs asking for 5+ years
+max_candidates_for_ai: 40    # pre-filtered jobs sent to Claude per run
+top_n_in_email: 10           # matches in the email
